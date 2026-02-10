@@ -186,6 +186,368 @@
             transform: translateY(-5px) scale(1.02);
             background: rgba(255,255,255,0.08);
         }
+
+        /* Mobile Bottom Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            gap: 4px;
+        }
+
+        .mobile-nav-item.active {
+            opacity: 1;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .sidebar-indicator {
+                width: 4cm;
+                padding: 1rem;
+            }
+            
+            .content-area {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow: hidden;
+            }
+
+            .perspective-container {
+                flex-direction: column;
+                height: 100vh;
+                height: 100dvh; /* Dynamic viewport height for mobile */
+            }
+
+            .sidebar-indicator {
+                display: none;
+            }
+
+            .slide-deck {
+                height: calc(100vh - 80px);
+                height: calc(100dvh - 80px);
+            }
+
+            .slide {
+                flex-direction: column;
+                overflow-y: auto;
+                padding-bottom: 100px;
+            }
+
+            .content-area {
+                padding: 1.5rem;
+                padding-top: 1rem;
+                justify-content: flex-start;
+                overflow-y: visible;
+            }
+
+            .mobile-nav {
+                display: flex;
+                justify-content: space-around;
+                height: 70px;
+            }
+
+            /* Typography adjustments */
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+            }
+
+            h3 {
+                font-size: 1.3rem !important;
+            }
+
+            .mirror-text {
+                font-size: inherit;
+            }
+
+            /* Grid adjustments */
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Chart containers */
+            .chart-container {
+                height: 250px !important;
+                min-height: 250px;
+            }
+
+            .h-\[60vh\] {
+                height: auto !important;
+                min-height: 400px;
+            }
+
+            .h-\[65vh\] {
+                height: auto !important;
+                min-height: 400px;
+            }
+
+            /* Glass panels */
+            .glass-panel {
+                padding: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Stat cards */
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            /* Navigation controls reposition */
+            .fixed.bottom-8 {
+                bottom: 90px;
+                right: 1rem;
+            }
+
+            .fixed.bottom-8 button {
+                width: 40px;
+                height: 40px;
+            }
+
+            /* Intro slide specific */
+            .slide[data-theme-1*="56, 189, 248"] .grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .slide[data-theme-1*="56, 189, 248"] .floating {
+                margin-top: 2rem;
+                width: 100%;
+            }
+
+            /* Stats slide */
+            .lg\:col-span-1, .lg\:col-span-2 {
+                grid-column: 1 !important;
+            }
+
+            /* Food & DJ slide */
+            .md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Host & Quiz slide */
+            .lg\:col-span-2 {
+                order: -1;
+            }
+
+            /* Feedback slide */
+            .space-y-4 {
+                max-height: 300px;
+                overflow-y: auto;
+            }
+
+            /* Recommendations slide */
+            .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .group {
+                margin-bottom: 0.75rem;
+            }
+
+            /* Button adjustments */
+            button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            /* Text adjustments */
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .text-6xl, .text-7xl {
+                font-size: 2.5rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.8rem !important;
+            }
+
+            .text-2xl {
+                font-size: 1.3rem !important;
+            }
+
+            .text-xl {
+                font-size: 1.1rem !important;
+            }
+
+            /* Flex adjustments */
+            .flex.gap-4 {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            .flex.gap-4 > * {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            /* Icon sizes */
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            /* Floating animation adjustment */
+            .floating {
+                animation: none;
+                transform: none !important;
+            }
+
+            /* Ensure content fits */
+            .content-area > div {
+                width: 100%;
+            }
+
+            /* Slide transitions for mobile */
+            .slide.prev {
+                transform: translateX(-100%) translateZ(0);
+            }
+
+            .slide.next {
+                transform: translateX(100%) translateZ(0);
+            }
+
+            .slide.active {
+                transform: translateX(0) translateZ(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-area {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            .glass-panel {
+                padding: 1rem;
+                border-radius: 16px;
+            }
+
+            .chart-container {
+                height: 200px !important;
+                min-height: 200px;
+            }
+
+            .mobile-nav-item {
+                font-size: 0.65rem;
+                padding: 0.4rem;
+            }
+
+            .mobile-nav-item i {
+                font-size: 1rem;
+            }
+        }
+
+        /* Landscape mode adjustments */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .mobile-nav {
+                display: none;
+            }
+
+            .slide-deck {
+                height: 100vh;
+            }
+
+            .slide {
+                padding-bottom: 20px;
+            }
+
+            .content-area {
+                padding: 1rem;
+                justify-content: flex-start;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            h1 {
+                font-size: 1.8rem !important;
+            }
+
+            h2 {
+                font-size: 1.3rem !important;
+            }
+
+            .chart-container {
+                height: 150px !important;
+                min-height: 150px;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-item:hover {
+                transform: none;
+            }
+
+            .stat-card:hover {
+                transform: none;
+            }
+
+            .group:hover .group-hover\:scale-110 {
+                transform: none;
+            }
+
+            .group:hover .group-hover\:translate-x-1 {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -194,7 +556,7 @@
     <!-- Dynamic Background -->
     <div class="bg-mesh" id="bgMesh"></div>
 
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar Navigation (Desktop) -->
     <div class="sidebar-indicator" id="sidebar">
         <div class="mb-8">
             <h1 class="text-2xl font-bold font-serif italic mirror-text">Parlaq Bir İl</h1>
@@ -601,6 +963,34 @@
     </div>
 </div>
 
+<!-- Mobile Bottom Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-item active" onclick="goToSlide(0)" data-index="0">
+        <i class="fas fa-home" style="color: #38bdf8;"></i>
+        <span>Giriş</span>
+    </div>
+    <div class="mobile-nav-item" onclick="goToSlide(1)" data-index="1">
+        <i class="fas fa-chart-bar" style="color: #fbbf24;"></i>
+        <span>Statistik</span>
+    </div>
+    <div class="mobile-nav-item" onclick="goToSlide(2)" data-index="2">
+        <i class="fas fa-utensils" style="color: #a78bfa;"></i>
+        <span>Yemək</span>
+    </div>
+    <div class="mobile-nav-item" onclick="goToSlide(3)" data-index="3">
+        <i class="fas fa-microphone-alt" style="color: #f472b6;"></i>
+        <span>Aparıcı</span>
+    </div>
+    <div class="mobile-nav-item" onclick="goToSlide(4)" data-index="4">
+        <i class="fas fa-comments" style="color: #34d399;"></i>
+        <span>Rəylər</span>
+    </div>
+    <div class="mobile-nav-item" onclick="goToSlide(5)" data-index="5">
+        <i class="fas fa-lightbulb" style="color: #f87171;"></i>
+        <span>Təvsiyələr</span>
+    </div>
+</div>
+
 <!-- Navigation Controls -->
 <div class="fixed bottom-8 right-8 flex gap-4 z-50">
     <button onclick="prevSlide()" class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
@@ -619,6 +1009,7 @@
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const sidebarItems = document.querySelectorAll('.nav-item');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
     const bgMesh = document.getElementById('bgMesh');
 
     // Initialize Charts
@@ -781,8 +1172,17 @@
             }
         });
 
-        // Update Sidebar
+        // Update Sidebar (Desktop)
         sidebarItems.forEach((item, index) => {
+            if (index === currentSlide) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        // Update Mobile Nav
+        mobileNavItems.forEach((item, index) => {
             if (index === currentSlide) {
                 item.classList.add('active');
             } else {
@@ -826,12 +1226,55 @@
         if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevSlide();
     });
 
+    // Touch/Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        }
+    }
+
     // Initialize
     window.addEventListener('load', () => {
         initCharts();
         updateSlideClasses();
     });
 
+    // Handle resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            // Resize charts if needed
+            if (mainChart) mainChart.resize();
+            if (foodChart) foodChart.resize();
+            if (djChart) djChart.resize();
+            if (quizChart) quizChart.resize();
+            if (feedbackChart) feedbackChart.resize();
+        }, 250);
+    });
+
 </script>
 </body>
+
 </html>
